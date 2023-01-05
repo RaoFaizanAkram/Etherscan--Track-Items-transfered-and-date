@@ -2,13 +2,13 @@ const Web3 = require('web3');
 const fs = require('fs-extra')
 
 const web3 = new Web3('wss://mainnet.infura.io/ws/v3/d9409fd4b4804716877c43f684f667b7');
-const contractAddress = '0xf429210d0F619F71eAa34f37A6A9545068ef166B';
+const contractAddress = 'contract address';
 const abi = fs.readFileSync('./eth-contract.abi', 'utf8')
 const contractAbi = JSON.parse(abi)
 const contract = new web3.eth.Contract(contractAbi, contractAddress);
 
 async function logTime() {
-    let result = []
+  
     let len
     await contract
         .getPastEvents('Transfer', {
